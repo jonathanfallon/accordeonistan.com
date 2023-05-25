@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Looking for the Sheng | Un voyage en Accordéonistan</title>
+
+<link rel="alternate" hreflang="fr-FR" href="/sur-les-traces-du-sheng2/" />
+<link rel="alternate" hreflang="en-US" href="/looking-for-the-sheng/?lang=en" />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Un voyage en Accordéonistan &raquo; Feed" href="/feed/?lang=en" />
+<link rel="alternate" type="application/rss+xml" title="Un voyage en Accordéonistan &raquo; Comments Feed" href="/comments/feed/?lang=en" />
+<link rel="alternate" type="application/rss+xml" title="Un voyage en Accordéonistan &raquo; Looking for the Sheng Comments Feed" href="/looking-for-the-sheng/feed/?lang=en" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wpml-legacy-horizontal-list-0-css'  href='/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-list-horizontal/style.css?ver=1' type='text/css' media='all' />
+<style id='wpml-legacy-horizontal-list-0-inline-css' type='text/css'>
+.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#cdcdcd;}.wpml-ls-statics-shortcode_actions a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions a:hover,.wpml-ls-statics-shortcode_actions a:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+</style>
+<link rel='stylesheet' id='wpml-menu-item-0-css'  href='/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='delighted-style-css'  href='/wp-content/themes/delighted/style.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='bitter-lora-css'  href='//fonts.googleapis.com/css?family=Archivo+Narrow%3A400%2C700%7CLora%3A400%2C700&#038;ver=1.0' type='text/css' media='all' />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	var disableStr = 'ga-disable-UA-50322216-1';
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+	__gaTracker('create', 'UA-50322216-1', 'auto');
+	__gaTracker('set', 'forceSSL', true);
+	__gaTracker('send','pageview');
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","is_debug_mode":"false","download_extensions":"doc,exe,js,pdf,ppt,tgz,zip,xls","inbound_paths":"","home_url":"\/?lang=en","track_download_as":"event","internal_label":"int","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=6.2.0'></script>
+<link rel='https://api.w.org/' href='/wp-json/?lang=en/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel="canonical" href="/looking-for-the-sheng/?lang=en" />
+<link rel='shortlink' href='/?p=169&#038;lang=en' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/?lang=en%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Faccordeonistan.com%2Flooking-for-the-sheng%2F%3Flang%3Den" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/?lang=en%2Foembed%2F1.0%2Fembed&#038;url=http%3A%2F%2Faccordeonistan.com%2Flooking-for-the-sheng%2F%3Flang%3Den&#038;format=xml" />
+<meta name="generator" content="WPML ver:3.7.1 stt:1,4;" />
+<style type="text/css" media="screen">
+	a, a:visited, a:hover, a:focus, a:active, .site-branding em, .entry-title h1 a:hover, .entry-title-meta span { color:#71616b; }
+
+	.main-navigation ul ul a:hover { color:#71616b !important; }
+
+	.label, button, .button, html input[type="button"], input[type="reset"], input[type="submit"], button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button:focus, html input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, html input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, #wp-calendar caption { background-color:#71616b; }
+</style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+				<style type="text/css">
+	    	        .site-header {
+	            background: url(/wp-content/uploads/2014/04/cropped-cropped-cropped-acordeonisthan-paola.jpg);
+	        }
+				</style>
+	
+	    		<style type="text/css">
+					.site-description {
+				color: #fff;
+			}
+				</style>
+		</head>
+
+<body class="page-template-default page page-id-169">
+
+<div id="page" class="hfeed site">
+
+		
+	<header id="masthead" class="site-header" role="banner">
+	
+		<nav id="site-navigation" class="main-navigation clear" role="navigation">
+		    
+		    <div class="menu-menu-1-container"><ul id="menu-menu-1" class="menu"><li id="menu-item-1650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1650"><a href="/the-project/?lang=en">Le projet</a></li>
+<li id="menu-item-1651" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1651"><a href="/the-artists/?lang=en">Les articles</a>
+<ul  class="sub-menu">
+	<li id="menu-item-1667" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1667"><a href="/category/hongrie">Hongrie</a></li>
+	<li id="menu-item-1671" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1671"><a href="/category/serbie">Serbie</a></li>
+	<li id="menu-item-1673" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1673"><a href="/category/turquie">Turquie</a></li>
+	<li id="menu-item-1666" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1666"><a href="/category/georgie">Géorgie</a></li>
+	<li id="menu-item-1664" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1664"><a href="/category/armenie">Arménie</a></li>
+	<li id="menu-item-1668" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1668"><a href="/category/iran">Iran</a></li>
+	<li id="menu-item-1672" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1672"><a href="/category/turkmenistan">Turkménistan</a></li>
+	<li id="menu-item-1670" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1670"><a href="/category/ouzbekistan">Ouzbékistan</a></li>
+	<li id="menu-item-1669" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1669"><a href="/category/kirghizstan">Kirghizstan</a></li>
+	<li id="menu-item-1665" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1665"><a href="/category/chine">Chine</a></li>
+</ul>
+</li>
+<li id="menu-item-1652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1652"><a href="/the-sounds/?lang=en">La musique</a>
+<ul  class="sub-menu">
+	<li id="menu-item-1656" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1656"><a href="/the-sounds/hungary/?lang=en">Hongrie</a></li>
+	<li id="menu-item-1659" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1659"><a href="/the-sounds/serbia/?lang=en">Serbie</a></li>
+	<li id="menu-item-1661" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1661"><a href="/the-sounds/turkey/?lang=en">Turquie</a></li>
+	<li id="menu-item-1655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1655"><a href="/the-sounds/georgia/?lang=en">Géorgie</a></li>
+	<li id="menu-item-1653" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1653"><a href="/the-sounds/armenia/?lang=en">Arménie</a></li>
+	<li id="menu-item-1657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1657"><a href="/iran/?lang=en">Iran</a></li>
+	<li id="menu-item-1660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1660"><a href="/the-sounds/turkmenistan/?lang=en">Turkménistan</a></li>
+	<li id="menu-item-1658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1658"><a href="/the-sounds/uzbekistan/?lang=en">Ouzbékistan</a></li>
+	<li id="menu-item-1647" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1647"><a href="/kyrgyzstan/?lang=en">Kirghizstan</a></li>
+	<li id="menu-item-1654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1654"><a href="/china/?lang=en">Chine</a></li>
+</ul>
+</li>
+<li id="menu-item-1854" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1854"><a href="/les-carnets-sonores/">Les carnets sonores</a></li>
+<li id="menu-item-1814" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1814"><a href="/inspirations/">Inspirations</a></li>
+<li id="menu-item-1662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1662"><a href="/supports/?lang=en">Soutiens</a></li>
+<li id="menu-item-1648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1648"><a href="/the-accordion-trotter/?lang=en">Contact</a></li>
+<li id="menu-item-wpml-ls-26-fr" class="menu-item-language menu-item wpml-ls-slot-26 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item wpml-ls-first-item menu-item-wpml-ls-26-fr"><a href="/sur-les-traces-du-sheng2/"><img class="wpml-ls-flag" src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/fr.png" alt="fr" title="Français"></a></li>
+<li id="menu-item-wpml-ls-26-en" class="menu-item-language menu-item-language-current menu-item wpml-ls-slot-26 wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-menu-item wpml-ls-last-item menu-item-wpml-ls-26-en"><a href="/looking-for-the-sheng/?lang=en"><img class="wpml-ls-flag" src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" alt="en" title="English"></a></li>
+</ul></div>		    
+		</nav><!-- #site-navigation -->
+	    
+	    <div class="site-branding">
+	    	<a href="/?lang=en" rel="home">
+	    			    		Un voyage en Accordéonistan	    			    		
+	    	</a>
+	    </div><!-- #site-branding -->
+	    
+	    	    <div class="site-description">A trip to Accordeonistan</div>
+	    
+	    	    
+	</header><!-- #masthead -->
+	
+	<div id="content-wrap" class="site-content-wrap">
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+
+		<main id="main" class="site-main" role="main">
+
+			
+				
+<article id="post-169" class="post-169 page type-page status-publish hentry">
+
+	<header class="entry-header">
+	
+		<div class="entry-title page-title title">
+			<h1>Looking for the Sheng</h1>
+		</div>
+
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+	
+		
+		<p style="text-align: justify;">You may well ask me, <strong>but what is the relationship between an accordion and the Silk Road</strong>? Because there is indeed one.</p>
+<p style="text-align: justify;">The accordion, or even the harmonica, are free reed instruments, meaning wind instruments which produce sound thanks to a vibrating metal strip (the reed). In the case of the harmonica, it’s the breath of the player which creates the vibration; in the case of the accordion, it’s the movement of air by the accordion bellows!</p>
+<p style="text-align: justify;">Coincidence, it so happens that the Chinese have used this type of instrument for already a very long time. Writings dating form 2000BC talk of an instrument, the Sheng – or ‘mouth organ’ – which functions on the same principle as an accordion. The reeds are placed in pipes (made from metal or wood), pierced with a hole and connected to a reservoir (a gourd, or metal) which the musician fills with air using his breath. The air circulates therefore in numerous pipes, and a sound is only produced when the hole is blocked by the musician.</p>
+<p style="text-align: justify;">Some copies of the Sheng were brought to Europe in the eighteenth century by European missionaries sent to China. Travelling the Silk Road until Paris, the Sheng would then inspire in the nineteenth century the creation of the harmonica, the harmonium and then the accordion!</p>
+<p style="text-align: justify;"><strong>Attaching all my certainties to this historic event yet related to the conditional, and taken by an irrepressible thirst for adventure, I am therefore setting off in search of this mysterious instrument, going back up the Silk Road just like Marco Polo in his day. </strong></p>
+<p style="text-align: justify;"><a href="/wp-content/uploads/2014/04/Sheng.jpg"><img class="aligncenter wp-image-203 size-medium" src="/wp-content/uploads/2014/04/Sheng-168x300.jpg" alt="Sheng" width="168" height="300" srcset="/wp-content/uploads/2014/04/Sheng-168x300.jpg 168w, /wp-content/uploads/2014/04/Sheng.jpg 449w" sizes="(max-width: 168px) 100vw, 168px" /></a></p>
+
+		
+	</div><!-- .entry-content -->
+
+</article><!-- #post-169 -->
+
+				
+	<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/looking-for-the-sheng/?lang=en#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><input name="wpml_language_code" type="hidden" value="en" /><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='169' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="938a41a9f8" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="235"/></p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+			
+		</main><!-- #main -->
+
+	</div><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+
+		
+		<aside id="facebooklikebox-2" class="widget widget_FacebookLikeBox"><div class="title"><h3 class="widget-title">Les dernières nouvelles de l&#8217;Accordéonistan sur Facebook!</h3></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like-box href="https://www.facebook.com/accordeonistan?fref=ts" width="292" show_faces="true" border_color="AAAAAA" stream="true" header="true"></fb:like-box></aside><aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="/?lang=en">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s">
+	</label>
+	<input type="hidden" name="stype" value="default">
+	<input type="submit" class="search-submit" value="Search">
+<input type='hidden' name='lang' value='en' /></form>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<div class="title"><h3 class="widget-title">Recent Posts</h3></div>		<ul>
+					<li>
+				<a href="/along-the-aras-river/?lang=en">Along the Aras river</a>
+						</li>
+					<li>
+				<a href="/tales-and-legends-from-kyrgyzstan/?lang=en">Tales and legends from Kyrgyzstan</a>
+						</li>
+					<li>
+				<a href="/welcome-to-the-blog/?lang=en">Welcome To the blog</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><div class="title"><h3 class="widget-title">Recent Comments</h3></div><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://hctlbxzpmnmnv.com' rel='external nofollow' class='url'>Website</a></span> on <a href="/je-suis-une-traduction/?lang=en#comment-2819">The chromatic silk road</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://www.forgetthebox.net/busking-in-montreal-a-how-to-guide/' rel='external nofollow' class='url'>Bashu</a></span> on <a href="/the-project/?lang=en#comment-2066">The project</a></li><li class="recentcomments"><span class="comment-author-link">tornike</span> on <a href="/the-sounds/georgia/?lang=en#comment-803">Georgia</a></li><li class="recentcomments"><span class="comment-author-link">Adrien Séguy</span> on <a href="/the-sounds/uzbekistan/?lang=en#comment-771">Uzbekistan</a></li><li class="recentcomments"><span class="comment-author-link"><a href='http://RephotosfromNukus' rel='external nofollow' class='url'>Gulsinay</a></span> on <a href="/the-sounds/uzbekistan/?lang=en#comment-765">Uzbekistan</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><div class="title"><h3 class="widget-title">Archives</h3></div>		<ul>
+			<li><a href='/2015/04/?lang=en'>April 2015</a></li>
+	<li><a href='/2015/03/?lang=en'>March 2015</a></li>
+	<li><a href='/2014/04/?lang=en'>April 2014</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><div class="title"><h3 class="widget-title">Categories</h3></div>		<ul>
+	<li class="cat-item cat-item-22"><a href="/category/armenia/?lang=en" >Armenia</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/category/home/?lang=en" >Home</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="/category/kyrgyzstan/?lang=en" >Kyrgyzstan</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="/category/uncategorized-en/?lang=en" >Uncategorized @en</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><div class="title"><h3 class="widget-title">Meta</h3></div>			<ul>
+						<li><a href="/wp-login.php">Log in</a></li>
+			<li><a href="/feed/?lang=en">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed/?lang=en">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</aside>
+	</div><!-- #secondary -->
+
+		</div><!-- #content -->
+		
+	</div><!-- #content-wrap -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+
+		<div class="site-info">
+
+						
+			<a href="" rel="generator">Proudly powered by Adrien</a>
+			<span class="sep"> | </span>
+			 With the help of Jonathan & Paola  <a href="" rel="designer"></a>.
+		</div><!-- .site-info -->
+
+	</footer><!-- #colophon -->
+
+</div><!-- #page -->
+
+<script type='text/javascript' src='/wp-content/plugins/akismet/_inc/form.js?ver=3.3.2'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.8'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var icl_vars = {"current_language":"en","icl_home":"\/?lang=en","ajax_url":"\/wp-admin\/admin-ajax.php\/?lang=en","url_type":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/plugins/sitepress-multilingual-cms/res/js/sitepress.js?ver=4.8'></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"8fb9f7ba2c","applicationID":"62612864","transactionName":"YVwEZxZVXhdYWxdbXVgWJ1AQXV8KFkgCVVc=","queueTime":0,"applicationTime":358,"atts":"TRsHEV5PTRk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
