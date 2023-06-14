@@ -235,6 +235,15 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
 };
+"le-projet": {
+"index.mdx": {
+	id: "index.mdx";
+  slug: "index";
+  body: string;
+  collection: "le-projet";
+  data: any
+} & { render(): Render[".mdx"] };
+};
 
 	};
 
